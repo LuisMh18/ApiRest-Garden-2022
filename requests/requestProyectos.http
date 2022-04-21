@@ -1,0 +1,32 @@
+###
+GET http://localhost:4000/api/proyectos HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxOH0sImlhdCI6MTY0MTMyMDY1OCwiZXhwIjoxNjQxMzI0MjU4fQ.Wxwkn53cdHqqrqfpDj1Mtwr0ZFkTMYar6n-qJgY3PHY
+
+###
+POST http://localhost:4000/api/proyectos HTTP/1.1
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxOH0sImlhdCI6MTY0MTMyMDY1OCwiZXhwIjoxNjQxMzI0MjU4fQ.Wxwkn53cdHqqrqfpDj1Mtwr0ZFkTMYar6n-qJgY3PHY
+ 
+{
+    "nombre": "Prueba 7"
+}
+
+###
+GET http://localhost:4000/api/proyectos/3 HTTP/1.1
+
+###
+DELETE http://localhost:4000/api/proyectos/4 HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxOH0sImlhdCI6MTY0MTMyNTIwMCwiZXhwIjoxNjQxMzI4ODAwfQ.KR1vKPt3nv7KzeLnfD4PK0MApbybFf84_MjrSPZ_248
+
+###
+PUT http://localhost:4000/api/proyectos/9 HTTP/1.1
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxOH0sImlhdCI6MTY0MTQwNDAzNCwiZXhwIjoxNjQxNDA3NjM0fQ.WSBLXANtABjp2FoMY3h0-lbBwylpV4_3ZhtBqGLkTk8
+
+{
+    "nombre": "Tienda Virtual"
+}
+
+###
+GET http://localhost:4000/api/proyectos/obtenerProyectos/usuario HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxOH0sImlhdCI6MTY0MTMyNTIwMCwiZXhwIjoxNjQxMzI4ODAwfQ.KR1vKPt3nv7KzeLnfD4PK0MApbybFf84_MjrSPZ_248

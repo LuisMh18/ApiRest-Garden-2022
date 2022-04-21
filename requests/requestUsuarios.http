@@ -1,0 +1,32 @@
+###
+GET http://localhost:4000/api/usuarios HTTP/1.1
+
+###
+POST http://localhost:4000/api/usuarios HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Dianney",
+    "email": "Dianney@hotmail.com",
+    "password": "dianney123"
+    //"date_add": "2021-08-02 17:31:29",
+    //"date_modified": "2021-08-02 17:31:29"
+}
+
+###
+GET http://localhost:4000/api/usuarios/3 HTTP/1.1
+
+###
+DELETE http://localhost:4000/api/usuarios/2 HTTP/1.1
+
+###
+PUT http://localhost:4000/api/usuarios/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Vianney Dominguez",
+    "email": "vianney@outlook.com",
+    "oldPassword": "loquesea",
+    "newPassword": "viannd", 
+    "newPasswordr": "viannd" 
+}
