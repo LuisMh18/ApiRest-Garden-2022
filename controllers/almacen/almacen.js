@@ -124,13 +124,15 @@ exports.delete = async (req, res) => {
   data["error"] = false;
   
   try {
-    
-    let almacen = await db.sequelize.query(`DELETE FROM almacen where id = ${ID};`, { type: db.sequelize.QueryTypes.DELETE});
-    if(!almacen.length){
+
+    let al = await db.sequelize.query(`SELECT * FROM almacen where id = "${ID}";`, { type: db.sequelize.QueryTypes.SELECT});
+    if(!al.length){
       data["error"] = true;
       data["msg"] = `El Almacén ${ID} no existe!`;
       return res.status(404).json(data);
     }
+    
+    let almacen = await db.sequelize.query(`DELETE FROM almacen where id = ${ID};`, { type: db.sequelize.QueryTypes.DELETE});
     data["data"] = almacen;
     data["msg"] = "Almacén eliminado exitosamente!";
     res.json(data);
