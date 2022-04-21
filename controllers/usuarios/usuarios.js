@@ -14,6 +14,11 @@ exports.findAll = async (req, res) => {
     const table = "usuario";
     const result = await apiResponser.consulta(table, req.query);
     data["data"] = result;
+
+    //mandamos también el catálogo de rol
+    let roles = await db.sequelize.query(`SELECT id, nombre FROM rol order by id desc;`, { type: db.sequelize.QueryTypes.SELECT});
+    data["roles"] = roles;
+
     res.status(200).json(data);
   } catch(e){
     console.dir(e);
