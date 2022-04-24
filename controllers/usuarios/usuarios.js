@@ -38,7 +38,7 @@ exports.findOne = async (req, res) => {
       data["msg"] = `El usuario ${req.params.id} no existe!`;
       return res.status(404).json(data);
     }
-    data["object"] = usuario;
+    data["data"] = usuario;
     res.json(data);
   } catch(e){
     console.dir(e);
