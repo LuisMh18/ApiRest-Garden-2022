@@ -38,7 +38,7 @@ exports.findAll = async (req, res) => {
 
      const productoTotales = [];
      let contador = 0;
-     producto.map(async (value) =>{
+     producto.forEach(async (value) =>{
       //console.log("value: ");
       //console.log(value);
       const i_v = await db.sequelize.query(`select sum(cantidad) as cantidadProductoInventario from inventario_detalle where producto_id = ${value.id};`, { type: db.sequelize.QueryTypes.SELECT});
