@@ -19,7 +19,7 @@ exports.findAll = async (req, res) => {
     let mes = moment(fecha).format("MM")
     let dia = moment(fecha).format("DD")
    
-    fechaFin = (tipo == "periodo") ? fechaFin = null : fechaFin = `'${fechaFin}'`;
+    fechaFin = (tipo !== "periodo") ? fechaFin = null : fechaFin = `'${fechaFin}'`;
 
     console.log("anio: ", anio);
     console.log("mes: ", mes);
@@ -34,7 +34,7 @@ exports.findAll = async (req, res) => {
     const totalPedidos = await db.sequelize.query(`CALL obtenerPedidos();`, { type: db.sequelize.QueryTypes.SELECT});
 
     //Armar inventario por producto
-    const producto = await db.sequelize.query(`SELECT id, clave FROM producto where estatus = 1 order by id desc;`, { type: db.sequelize.QueryTypes.SELECT});
+    const producto = await db.sequelize.query(`SELECT id, clave, nombre, color, piezas_paquete, total_piezas, foto, created_at, IVA, ruta_imagen, importador, almacen, familia, categoria FROM vh_producto;`, { type: db.sequelize.QueryTypes.SELECT});
 
      const productoTotales = [];
      let contador = 0;
