@@ -84,11 +84,11 @@ exports.findAll = async (req, res) => {
 
 };
 
-/*
-exports.getDataAll = async (req, res) => {
+
+exports.getInventario = async (req, res) => {
   console.log(req.usuario);
-  const table = "almacen";
-  const result = await db.sequelize.query(`SELECT id, clave, nombre, estatus, created_at FROM ${table} order by id desc;`, { type: db.sequelize.QueryTypes.SELECT});
+  const table = "vh_inventario";
+  const result = await db.sequelize.query(`SELECT * FROM ${table} where idProducto = ${req.params.id};`, { type: db.sequelize.QueryTypes.SELECT});
   let data = {};
   data["error"] = false;
   try {
@@ -101,7 +101,7 @@ exports.getDataAll = async (req, res) => {
 
 };
 
-
+/*
 exports.findOne = async (req, res) => {
   let data = {};
   data["error"] = false;

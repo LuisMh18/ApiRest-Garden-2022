@@ -6,7 +6,7 @@ const auth = require('../../middleware/auth');
 
 router.get('/', auth, dashboard.findAll);
 //router.get('/:id', auth, dashboard.findOne);
-//router.get('/getData/all', auth, dashboard.getDataAll);
+router.get('/getInventario/:id', auth, dashboard.getInventario);
 
 
 module.exports = router;
