@@ -9,6 +9,8 @@ const almacen = require('./routes/almacen/almacen');
 const menu = require('./routes/menu/menu');
 const inventario = require('./routes/inventario/inventario');
 const dashboard = require('./routes/dashboard/dashboard');
+
+const tienda = require('./routes/tienda/clientes');
 //crear el servidor 
 const app = express();
 
@@ -27,6 +29,7 @@ app.use('/api/almacen', almacen);
 app.use('/api/menu', menu); 
 app.use('/api/inventario', inventario); 
 app.use('/api/dashboard', dashboard); 
+app.use('/api/tienda', tienda); 
 
 //arrancar la app
 app.listen(PORT,  () => {
